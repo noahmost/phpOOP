@@ -19,13 +19,21 @@ class Beast {
     }
 }
 class favoriteName extends Beast {
+    function __construct($firstName, $lastName, $middleName, $favoriteName, $breed, $size, $type) {
+        parent::__construct($firstName, $lastName, $middleName, $favoriteName, $breed, $size);
+        $this->type= $type;
+    }
     function displayFavoritename(){
         return "But my favorite name is " . $this->favoriteName;
     }
 }
 class breedSize extends Beast {
-    function male6(){
-        return "I am a " . $this->breed . "and I am " . $this-size . "tall.";
+    function __construct($firstName, $lastName, $middleName, $favoriteName, $breed, $size, $flexzone) {
+        parent::__construct($firstName, $lastName, $middleName, $favoriteName, $breed, $size);
+        $this->flexzone = $flexzone;                                                                                            
+    }
+            function male6(){
+        return "I am a " . $this->breed . "and I am " . $this->size . "tall.";
     }
 }
 $breed1 = new breedSize("Pablo", "Picasso", "noodles", "puppy", "male", "6ft");
@@ -51,11 +59,20 @@ class Legolegends {
     
 }
 class Goldy extends Legolegends {
+    function __construct($gangplank, $ezreal, $katarina, $gold, $diamond, $items, $poo) {
+        parent::__construct($gangplank, $ezreal, $katarina, $gold, $diamond, $items);
+        $this->poo = $poo;
+        
+    }
         function getGold(){
             return "You get" . $this->gold . "by killing minions.";
         }
     }
 class Items extends Legolegends {
+    function __construct($gangplank, $ezreal, $katarina, $gold, $diamond, $items, $poopoo) {
+        parent::__construct($gangplank, $ezreal, $katarina, $gold, $diamond, $items);
+        $this->poopoo = $poopoo;
+    }
     function aquireItems(){
         return "You get" . $this->items . "by spending your gold in the shop";
     }
@@ -84,11 +101,19 @@ class Pineapples {
     
 }
 class BigL extends Pineapples {
-        function getPineapple(){
+        function __construct($yellow, $pointy, $big, $hawaii, $nation, $mcdonalds , $bking) {
+            parent::__construct($yellow, $pointy, $big, $hawaii, $nation, $mcdonalds);
+            $this->bking = $bking;
+        }
+    function getPineapple(){
             return "You get" . $this->mcdonalds . "by being good.";
         }
     }
 class Mcdonalds extends Pineapples {
+    function __construct($yellow, $pointy, $big, $hawaii, $nation, $mcdonalds, $chipotle) {
+        parent::__construct($yellow, $pointy, $big, $hawaii, $nation, $mcdonalds);
+        $this->chipotle = $chipotle;
+    }
     function aquireNation(){
         return "You get" . $this->nation . "by eating pineapples";
     }
